@@ -24,7 +24,7 @@ use walkdir::WalkDir;
 use crate::mrpack::modrinthpack::ModrinthManifest;
 // use image::io::Reader as ImageReader;
 
-const BASE_URL: &str = "https://modpack.vloedje.nl";
+const BASE_URL: &str = "https://github.com/Iautner/mindful-optimized";
 
 fn main() {
   tauri::Builder::default()
