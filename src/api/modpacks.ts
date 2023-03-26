@@ -2,7 +2,7 @@ import { invoke } from "@tauri-apps/api";
 import { fetch } from "@tauri-apps/api/http";
 import { Modpack } from "./types";
 
-const BASE_URL = "https://raw.githubusercontent.com/Iautner/mindful-optimized/main/";
+const BASE_URL = "https://mindful-optimized.github.io";
 
 interface getModpackResponse {
     modpacks: Modpack[],
