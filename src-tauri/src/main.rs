@@ -88,7 +88,7 @@ async fn install_loader(
   fs::create_dir_all(&version_dir).expect("Unable to create loader directory");
 
   let response: Response = reqwest::get(format!(
-    "https://meta.fabricmc.net/v2/versions/loader/{}/{}/profile/json",
+    "https://meta.quiltmc.org/v3/versions/loader/{}/{}/profile/json",
     minecraft_version, loader_version
   ))
   .await
@@ -201,7 +201,7 @@ async fn install_modpack(
   let modpack: Modpack = serde_json::from_value(modpack).expect("Unable to map modpack data");
   let gamepath: &Path = Path::new(&gamepath);
 
-  let modpack_dir: PathBuf = gamepath.join(".mindful").join(&modpack.id);
+  let modpack_dir: PathBuf = gamepath.join(".vloedje").join(&modpack.id);
   fs::create_dir_all(&modpack_dir).expect("Unable to create modpack folder");
 
   let pack_cache_dir: &PathBuf = &modpack_dir.join(".pack");
@@ -233,7 +233,7 @@ async fn install_modpack(
   install_loader(
     &modpack.id,
     &manifest.dependencies.minecraft,
-    &manifest.dependencies.fabric_loader,
+    &manifest.dependencies.quilt_loader,
     &gamepath,
   )
   .await
