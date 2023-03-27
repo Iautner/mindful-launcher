@@ -38,8 +38,8 @@ pub struct ModrinthFile {
 #[derive(Deserialize, Serialize, Clone, Debug)]
 pub struct ModrinthDependencies {
   pub minecraft: String,
-  #[serde(alias = "fabric-loader")]
-  pub fabric_loader: String,
+  #[serde(alias = "quilt-loader")]
+  pub quilt_loader: String,
 }
 #[derive(Deserialize, Serialize, Clone, Debug)]
 pub struct ModrinthManifest {
